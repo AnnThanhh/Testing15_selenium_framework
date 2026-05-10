@@ -2,6 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--suite: tổng hợp lại toàn bộ testcase có trong yêu cầu test -->
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="Listeners.TestListener"></listener>
+    </listeners>
 <!-- test: nơi chưa testcase, verbose: đánh giá mức độ hiển thị log của test (1 -> 10), preserve-order: true: test chạy có tuần tự -->
     <test verbose="2" preserve-order="true"
           name="REGRESSION TEST">
