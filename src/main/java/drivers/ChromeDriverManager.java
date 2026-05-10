@@ -1,0 +1,24 @@
+package drivers;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ChromeDriverManager extends DriverManager{
+    @Override
+    public void createWebDriver() {
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"}); // tat automation bar
+        options.setExperimentalOption("useAutomationExtension", false);
+
+        // Disable password save dialog
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+        options.setExperimentalOption("prefs", prefs);
+
+        this.driver = new ChromeDriver(options);
+    }
+}

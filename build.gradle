@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.automation'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.seleniumhq.selenium:selenium-java:4.43.0")
+    implementation("org.testng:testng:7.11.0")
+}
+
+test {
+    useTestNG() {
+        useDefaultListeners = true //dùng để tạo report testNG
+        outputDirectory = file("$projectDir/test_output") // folder chứa testNG report
+    }
+}
