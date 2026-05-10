@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--suite: tổng hợp lại toàn bộ testcase có trong yêu cầu test -->
+<suite name="All Test Suite">
+<!-- test: nơi chưa testcase, verbose: đánh giá mức độ hiển thị log của test (1 -> 10), preserve-order: true: test chạy có tuần tự -->
+    <test verbose="2" preserve-order="true"
+          name="REGRESSION TEST">
+        <classes>
+<!-- class: nơi chứa các testcase, method: các testcase cụ thể -->
+            <class name="testcases.register.Register01_Verify_Valid_Register">
+                <methods>
+                    <include name="test_valid_register"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

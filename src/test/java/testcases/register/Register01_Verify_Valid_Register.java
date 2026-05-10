@@ -103,6 +103,4 @@ public class Register01_Verify_Valid_Register extends BaseTest {
 //        driver.quit(); // Close browser & Quit chromedriver process
     }
 
-
-
 }
